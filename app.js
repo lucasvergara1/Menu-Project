@@ -78,7 +78,12 @@ const sectionCenter = document.querySelector(".section-center");
 
 window.addEventListener("DOMContentLoaded", function () {
   console.log("tela carregando ok");
-  let displayMenu = menu.map(function (item) {
+  displayMenuItems(menu);
+  
+});
+
+function displayMenuItems(menuItems) {
+  let displayMenu = menuItems.map(function (item) {
     //console.log(item);
 
     return `<article class="menu-item">
@@ -90,13 +95,10 @@ window.addEventListener("DOMContentLoaded", function () {
        </header>
        <p class ='item-text'>${item.desc}</p> 
       </div>
-  </article></h1>`;
+  </article>`;
   });
   displayMenu = displayMenu.join('');
   //console.log(displayMenu);
   sectionCenter.innerHTML = displayMenu;
-});
 
-function displayMenuItems(MenuItems) {
-  
 }
